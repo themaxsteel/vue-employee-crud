@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
+import Absensi from '../views/Absensi.vue'
+import Task from '../views/Task.vue'
 import { isAccessTokenAvailable, isNull } from "../utils/utils";
+
 
 const routes = [
   {
@@ -18,6 +21,16 @@ const routes = [
     name: 'Dashboard',
     component: Dashboard
   },
+  {
+    path: '/absensi',
+    name: 'Absensi',
+    component: Absensi,
+  },
+  {
+    path: '/task',
+    name: 'Task',
+    component: Task,
+  }
 ]
 
 const router = createRouter({

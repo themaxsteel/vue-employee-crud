@@ -21,7 +21,7 @@ export const useAuthStore = defineStore('auth', {
           resolve(response)
           router.push('dashboard')
         }).catch((error) => {
-          reject(error)
+          reject(error) 
         })
       })
       //TOAST

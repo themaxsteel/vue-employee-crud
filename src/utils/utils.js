@@ -33,7 +33,7 @@ export function deleteUser(){
 }
 
 export function isNullOrEmpty(target_object){
-  return (target_object==null || target_object==undefined || target_object=='')?true:false
+  return (target_object==null || target_object==undefined || target_object=='' || target_object == {})?true:false
 }
 
 export function isNull(target_object){
