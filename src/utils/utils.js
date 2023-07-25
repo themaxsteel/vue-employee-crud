@@ -39,3 +39,12 @@ export function isNullOrEmpty(target_object){
 export function isNull(target_object){
   return (target_object==null || target_object==undefined)?true:false
 }
+
+export function isEmpty(obj) {
+  for(var prop in obj) {
+      if(obj.hasOwnProperty(prop))
+          return false;
+  }
+
+  return JSON.stringify(obj) === JSON.stringify({});
+}

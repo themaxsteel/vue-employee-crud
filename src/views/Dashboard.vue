@@ -14,9 +14,16 @@
 </template>
 
 <script setup>
-import { getUser} from '../utils/utils'
+import { onMounted } from 'vue';
+import { getUser, isEmpty} from '../utils/utils'
 import EmployeeDashboard from './Dashboard/EmployeeDashboard.vue'
+import { useRouter } from 'vue-router';
 
 const user = getUser()
-
+const router = useRouter()
+onMounted(()=>{
+  if(isEmpty(user)){
+    router.push('login')
+  }
+})
 </script>

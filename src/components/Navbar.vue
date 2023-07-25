@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar fixed-top navbar-dark bg-success pe-5">
     <div class="container-fluid">
-      <a class="navbar-brand">Employee CRUD</a>
+      <a class="navbar-brand">Employee</a>
       <form class="d-flex">
         <li class="nav-item dropdown" style="list-style-type: none;">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

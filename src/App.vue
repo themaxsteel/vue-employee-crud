@@ -34,7 +34,7 @@
 
       </div>
       <div class="col-11 bg-content mt-5 pt-3">
-        <div class="container-inner h-100">
+        <div class="container-inner">
           <router-view />
 
         </div>
