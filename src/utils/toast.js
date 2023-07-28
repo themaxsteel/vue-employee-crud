@@ -37,6 +37,12 @@ export function customToast(promise, successMessage, errorMessage) {
       render(error) {
         return `Error: ${errorMessage || error.data.response.data.message}`
       }
-    }
+    },
+    
+  }, {
   })
+}
+
+export function errorToast(text){
+  return toast.error(text)
 }

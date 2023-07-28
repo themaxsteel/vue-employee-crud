@@ -9,9 +9,9 @@ import 'vue3-toastify/dist/index.css';
 import 'bootstrap/dist/js/bootstrap.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faClock, faHome, faPhone, faUserSecret, faCalendarCheck, faTasks, faList, faEllipsisVertical} from '@fortawesome/free-solid-svg-icons'
+import { faClock, faHome, faPhone, faUserSecret, faCalendarCheck, faTasks, faList, faEllipsisVertical, faAdd} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faUserSecret, faHome, faClock, faPhone, faCalendarCheck, faTasks, faList, faEllipsisVertical)
+library.add(faUserSecret, faHome, faClock, faPhone, faCalendarCheck, faTasks, faList, faEllipsisVertical, faAdd)
 
 const pinia = createPinia()
 const app = createApp(App)

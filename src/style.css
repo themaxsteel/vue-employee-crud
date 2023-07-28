@@ -61,3 +61,7 @@ a {
   font-size: 34px;
   color: #222;
 } */
+
+.input-error-message{
+  font-size: 14px;
+}

@@ -54,28 +54,7 @@ p.status {
         <h6>{{ taskDetail.name }}</h6>
 
         <!-- Button trigger modal -->
-        <button class="ellipsis" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <font-awesome-icon icon="ellipsis-vertical" />
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <TaskModal :task="taskDetail"/>
       </div>
       <p class="mb-0">{{ taskDetail.description }}</p>
     </div>
@@ -95,6 +74,7 @@ p.status {
 
 <script setup>
 import { ref } from 'vue'
+import TaskModal from './modal/TaskModal.vue';
 const { taskDetail, status } = defineProps({
   taskDetail: {
     required: true,

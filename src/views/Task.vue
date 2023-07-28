@@ -8,16 +8,18 @@
   overflow: scroll;
   height: 72vh;
 } */
-
 </style>
 <template>
-  <div class="main-content px-0 pb-0">
-    <h5 class="mb-4 ms-3">Task</h5>
+  <div class="main-content px-0 pb-0 mb-5">
+    <h5 class="mb-4 ms-3">Task Management</h5>
     <div class="bg-task rounded">
       <!-- Task Header -->
       <div class="row">
         <div class="col-3">
-          <h6>Master</h6>
+          <div class="d-flex justify-content-between">
+            <h6>Projects</h6>
+            <AddProjectModal />
+          </div>
         </div>
         <div class="col-3">
           <div class="d-flex">
@@ -42,12 +44,11 @@
       <hr class="mb-0">
       <!-- Task Body -->
       <div class="task-wrapper container-fluid">
-        <template v-for="(task,index) in taskList">
-      <TaskBoard :task-master="task" />
-      <hr v-if="index !== taskList.length - 1">
-      </template>
+        <template v-for="(task, index) in store.task">
+          <TaskBoard :task-master="task" />
+          <hr class="mt-4" v-if="index !== store.task.length - 1">
+        </template>
       </div>
-      
 
     </div>
   </div>
@@ -55,67 +56,14 @@
 
 <script setup>
 import TaskBoard from '../components/TaskBoard.vue';
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { useTaskManagementStore } from '../stores/task_management';
+import AddProjectModal from '../components/modal/AddProjectModal.vue';
 
-const taskList = ref([
-  {
-    id: 1,
-    name: "DirectBooking.id",
-    description: "Pengembangan UI dan Fungsi FE User",
-    todo: [
-      {
-        id: 1,
-        name: "Login Page - Slicings",
-        description: "Slicing halaman login dari figma ke flutter",
-      },
-    ],
-    doing: [
-      {
-        id: 2,
-        name: "Onboad Page - Slicing",
-        description: "Slicing halaman onboard dari figma ke flutter"
-      },
-    ],
-    done: [
-      {
-        id: 3,
-        name: "Onboad Page - Figma",
-        description: "Slicing halaman onboard dari figma ke flutter"
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Flutter Cloud PMS",
-    description: "Aplikasi Mobile Android dan iOS Cloud PMS dengan FLutter",
-    todo: [
-      {
-        id: 1,
-        name: "Login Page - Figma",
-        description: "Buat halaman login cloud pms menggunakan figma dengan skema login username, password, company code"
-      },
-      {
-        id: 2,
-        name: "Login Page - Slicing",
-        description: "Slicing halaman login dari figma ke flutter"
-      },
-    ],
-    doing: [
-      {
-        id: 2,
-        name: "Onboad Page - Slicing",
-        description: "Slicing halaman onboard dari figma ke flutter"
-      },
-    ],
-    done: [
-      {
-        id: 3,
-        name: "Onboad Page - Figma",
-        description: "Slicing halaman onboard dari figma ke flutter"
-      },
-    ],
-  }
-])
+const store = useTaskManagementStore()
 
+onMounted(() => {
+  store.loadTask()
+})
 
 </script>
